@@ -4,8 +4,10 @@ import React from 'react'
 
 export default function Stardustncandy() {
 
-    const stardust = Math.floor(Math.random() * 10000)
-    const candy = Math.floor(Math.random() * 200)
+    const stardust = 1
+    // const stardust = Math.floor(Math.random() * 10000)
+    const candy = 2
+    // const candy = Math.floor(Math.random() * 200)?
 
     return (
         <div>
