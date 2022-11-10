@@ -1,0 +1,22 @@
+import React from 'react'
+
+export default function Stardustncandy() {
+
+    const stardust = Math.floor(Math.random() * 10000)
+    const candy = Math.floor(Math.random() * 200)
+    
+    return (
+        <div>
+            <div className='flex justify-evenly mt-16 translate-y-[-35%]'>
+                <div className='border-[1px] border-slate-800 rounded-xl px-7 py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'>
+                    <p className='font-semibold text-lg text-center'>{stardust}</p>
+                    <div className='text-sm text-white'>Stardust</div>
+                </div>
+                <div className='border-[1px] border-slate-800 rounded-xl px-9 py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'>
+                    <p className='font-semibold text-lg text-center'>{candy}</p>
+                    <div className='text-sm text-white'>Candy</div>
+                </div>
+            </div>
+        </div>
+    )
+}

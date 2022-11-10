@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Stardustncandy from './stardustncandy';
 
 export async function getStaticParams(){
     const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
@@ -10,9 +11,6 @@ export async function getStaticParams(){
 }
 
 export default async function PokemonPage({ params }) {
-
-    const stardust = Math.floor(Math.random() * 10000)
-    const candy = Math.floor(Math.random() * 200)
 
     async function getPokemon() {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
@@ -63,16 +61,7 @@ export default async function PokemonPage({ params }) {
                                 <p className='text-center text-sm text-cyan-800'>Type</p>
                             </div>
                         </div>
-                        <div className='flex justify-evenly mt-16 translate-y-[-35%]'>
-                            <div className='border-[1px] border-slate-800 rounded-xl px-7 py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'>
-                                <p className='font-semibold text-lg text-center'>{stardust}</p>
-                                <div className='text-sm text-white'>Stardust</div>
-                            </div>
-                            <div className='border-[1px] border-slate-800 rounded-xl px-9 py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'>
-                                <p className='font-semibold text-lg text-center'>{candy}</p>
-                                <div className='text-sm text-white'>Candy</div>
-                            </div>
-                        </div>
+                        <Stardustncandy />
                     </article>
                 </main>
                 <footer className='text-center pb-8'>
