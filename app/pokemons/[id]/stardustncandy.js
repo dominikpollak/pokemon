@@ -1,10 +1,12 @@
+'use client'
+
 import React from 'react'
 
 export default function Stardustncandy() {
 
     const stardust = Math.floor(Math.random() * 10000)
     const candy = Math.floor(Math.random() * 200)
-    
+
     return (
         <div>
             <div className='flex justify-evenly mt-16 translate-y-[-35%]'>
