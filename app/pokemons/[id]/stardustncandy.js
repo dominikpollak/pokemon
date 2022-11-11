@@ -1,13 +1,21 @@
 'use client'
 
-import React from 'react'
+import { useEffect, useState } from "react"
 
-export default function Stardustncandy() {
+export default function Stardustncandy({pokemon}) {
 
-    const stardust = 1
-    // const stardust = Math.floor(Math.random() * 10000)
-    const candy = 2
-    // const candy = Math.floor(Math.random() * 200)?
+    const [stardust, setStardust] = useState(0)
+    const [candy, setCandy] = useState(0)
+
+    useEffect(() => {
+
+        setStardust(Math.floor(Math.random() * 10000))
+        setCandy(Math.floor(Math.random() * 200))
+
+    },[pokemon])
+
+    // const stardust = 1
+    // const candy = 2
 
     return (
         <div>

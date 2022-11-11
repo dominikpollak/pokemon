@@ -2,11 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Stardustncandy from './stardustncandy';
 
-export async function getStaticParams(){
+export async function generateStaticParams(){
     const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
     const pokemons = await res.json()
     return pokemons.results.map(pokemon => (
-        {id : pokemon.id}
+        {id : pokemon.name}
     ))
 }
 
@@ -61,7 +61,7 @@ export default async function PokemonPage({ params }) {
                                 <p className='text-center text-sm text-cyan-800'>Type</p>
                             </div>
                         </div>
-                        <Stardustncandy />
+                        <Stardustncandy pokemon={pokemon}/>
                     </article>
                 </main>
                 <footer className='text-center pb-8'>
