@@ -5,7 +5,7 @@ import Image from "next/image"
 export default async function PokemonsPage() {
 
     async function getPokemons() {
-        const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
+        const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=500')
         return res.json()
     }
 

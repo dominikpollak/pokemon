@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Stardustncandy from './stardustncandy';
 
 export async function generateStaticParams(){
-    const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=500')
     const pokemons = await res.json()
     return pokemons.results.map(pokemon => (
         {id : pokemon.name}
