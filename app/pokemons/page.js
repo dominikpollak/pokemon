@@ -14,7 +14,7 @@ export default function PokemonsPage() {
     useEffect(()=>{
         async function getPokemons() {
             try{
-            const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
+            const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=500')
             const pokes = await res.json()
             setPokemons(pokes)
 
