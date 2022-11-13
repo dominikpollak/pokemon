@@ -9,7 +9,6 @@ export async function generateStaticParams(){
         {id : pokemon.name}
     ))
 }
-//lolol
 
 export default async function PokemonPage({ params }) {
 
