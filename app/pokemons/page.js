@@ -9,23 +9,34 @@ export default function PokemonsPage() {
 
     const [query, setQuery] = useState('')
     const [pokemons, setPokemons] = useState([])
-   
+    const [pokesWithId, setPokesWithId] = useState([])
+
     useEffect(()=>{
         async function getPokemons() {
             try{
-            const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=500')
+            const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
             const pokes = await res.json()
             setPokemons(pokes)
+
+            setPokesWithId(pokemons.results && pokemons.results.map((pokemon, index) => {
+                return {...pokemon, id : index + 1}
+            }))
+
             }
             catch(err){
                 <p>{err.message}</p>
             }
         }
         getPokemons()
-    },[])
+              
+    },[pokemons])
 
     return (
+
         <main className="relative">
+            {/* {pokesWithId && pokesWithId.map(poke => (
+                <p>{JSON.stringify(poke)}</p>
+            ))} */}
 
               <div className='flex justify-center pt-10 '>
             <input
@@ -42,19 +53,18 @@ export default function PokemonsPage() {
             </header>
 
             <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-8 px-24 pb-24 pt-12">
-                {pokemons.results && pokemons.results.filter(poke =>{
+                {pokesWithId && pokesWithId.filter(poke =>{
                     if(query == '') return poke 
                     else{
                         return poke.name.toLowerCase().includes(query)}
-                }).map((pokemon, index) => (
-                    <div className="flex justify-center p-1 border-[1px] border-slate-600" key={pokemon.id}>
+                }).map(pokemon => (
+                    <div className="flex justify-center p-1 border-[1px] border-slate-600" key={pokemon.name}>
                         <Link
                             className="capitalize text-md text-center hover:text-slate-500 hover:font-semibold"
                             href={`/pokemons/${pokemon.name}`}
-                            key={pokemon.id}>
+                            key={pokemon.name}>
                             <Image
-                                className=''
-                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
+                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
                                 width={70}
                                 height={70}
                                 alt={pokemon.name} />
