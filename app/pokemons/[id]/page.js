@@ -2,11 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Stardustncandy from './stardustncandy';
 
-export async function generateStaticParams(){
+
+// SSG render
+export async function generateStaticParams() {
     const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
     const pokemons = await res.json()
     return pokemons.results.map(pokemon => (
-        {id : pokemon.name}
+        { id: pokemon.name }
     ))
 }
 
@@ -22,12 +24,14 @@ export default async function PokemonPage({ params }) {
     return (
         <>
             <div className='h-screen flex flex-col pt-[2em]' key={pokemon.name}>
-                <Image
-                    className='relative mx-auto max-h-[220px]'
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-                    width={250}
-                    height={250}
-                    alt={pokemon.name} />
+
+                    <Image
+                        className='relative mx-auto max-h-[220px] hover:scale-110 duration-300'
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
+                        width={250}
+                        height={250}
+                        alt={pokemon.name} />
+
                 <main className="mt-[-4.5em] w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-white shadow-md">
                     <article className='px-10 py-6 pt-28'>
                         {/* <h1 className='text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-rose-800 text-3xl tracking-[5px] font-light capitalize text-center pb-6' */}
@@ -61,7 +65,7 @@ export default async function PokemonPage({ params }) {
                                 <p className='text-center text-sm text-cyan-800'>Type</p>
                             </div>
                         </div>
-                        <Stardustncandy pokemon={pokemon}/>
+                        <Stardustncandy pokemon={pokemon} />
                     </article>
                 </main>
                 <footer className='text-center pb-8'>
