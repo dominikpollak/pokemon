@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from "next/link"
 import Image from "next/image"
 
@@ -14,7 +14,7 @@ export default function PokemonsPage() {
     useEffect(()=>{
         async function getPokemons() {
             try{
-            const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=500')
+            const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
             const pokes = await res.json()
             setPokemons(pokes)
 
@@ -28,8 +28,10 @@ export default function PokemonsPage() {
             }
         }
         getPokemons()
+
+        console.log('rerender')
               
-    },[pokemons])
+    },[JSON.stringify(pokemons)])
 
     return (
 
