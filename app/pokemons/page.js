@@ -54,7 +54,7 @@ export default function PokemonsPage() {
                 <Link className="underline hover:font-semibold" href='/'>back</Link>
             </header>
 
-            <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-8 px-24 pb-24 pt-12">
+            <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-4 px-24 pb-24 pt-12">
                 {pokesWithId && pokesWithId.filter(poke =>{
                     if(query == '') return poke 
                     else{
@@ -67,8 +67,8 @@ export default function PokemonsPage() {
                             key={pokemon.name}>
                             <Image
                                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
-                                width={70}
-                                height={70}
+                                width={120}
+                                height={120 }
                                 alt={pokemon.name} />
                             {pokemon.name}
                         </Link>
