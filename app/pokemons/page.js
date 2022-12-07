@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Link from "next/link"
 // import { Suspense } from "react";
 // import Spinner from '../(components)/spinner';
-import PokemonListCard from '../(components)/pokemonListCard'
+import PokemonList from '../(components)/pokemonList'
 import fetchPokemons from '../(components)/fetchPokemons';
 
 export default function PokemonsPage() {
@@ -45,18 +45,7 @@ export default function PokemonsPage() {
                 <Link className="underline hover:font-semibold" href='/'>back</Link>
             </header>
 
-            <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-4 px-24 lg:px-[8em] pb-24 pt-12">
-                {pokesWithId && pokesWithId.filter(poke => {
-                    if (query == '') return poke
-                    else {
-                        {/*conditional filtering based on searchbar value */}
-                        return poke.name.toLowerCase().includes(query)
-                    }
-                }).map(pokemon => (
-                    //pokemon link card with name and image
-                    <PokemonListCard name={pokemon.name} id={pokemon.id}/>
-                ))}
-            </div>
+            <PokemonList pokesWithId={pokesWithId} query={query} />
         </main>
     )
 }
