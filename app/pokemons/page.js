@@ -6,25 +6,17 @@ import Link from "next/link"
 // import { Suspense } from "react";
 // import Spinner from '../(components)/spinner';
 import PokemonListCard from '../(components)/pokemonListCard'
+import fetchPokemons from '../(components)/fetchPokemons';
 
 export default function PokemonsPage() {
 
     const [query, setQuery] = useState('')
-    const [pokemons, setPokemons] = useState([])
     const [pokesWithId, setPokesWithId] = useState([])
-
 
     useEffect(() => {
         async function getPokemons() {
             try {
-                const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=250')
-                const pokes = await res.json()
-                setPokemons(pokes)
-
-                setPokesWithId(pokemons.results && pokemons.results.map((pokemon, index) => {
-                    return { ...pokemon, id: index + 1 }
-                }))
-
+                setPokesWithId(await fetchPokemons())
             }
             catch (err) {
                 <p>{err.message}</p>
@@ -34,7 +26,7 @@ export default function PokemonsPage() {
 
         console.log('rerender')
 
-    }, [JSON.stringify(pokemons)])
+    }, [JSON.stringify(pokesWithId)])
 
     return (
 
