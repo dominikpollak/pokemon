@@ -25,7 +25,6 @@ export default async function Loading() {
         </div>
         <main className="mt-[-4.5em] w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-white shadow-md">
           <article className='px-10 py-6 pt-28'>
-            {/* <h1 className='text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-rose-800 text-3xl tracking-[5px] font-light capitalize text-center pb-6' */}
             <h1 className='text-cyan-900 text-4xl tracking-[5px] font-light capitalize text-center pb-7'
             ></h1>
             <div className='h-[0.9em] w-[13em] mx-auto bg-gradient-to-r from-cyan-500 to-cyan-700 rounded-l-full rounded-r-full mb-8'></div>
