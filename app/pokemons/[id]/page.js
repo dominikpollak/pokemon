@@ -1,5 +1,6 @@
 import PokemonInfo from './pokemonInfo';
 import { Suspense } from 'react';
+import Loading from './loading';
 
 // SSG render
 export async function generateStaticParams() {
@@ -14,7 +15,7 @@ export default async function PokemonPage({ params }) {
 
     return (
         <>
-        <Suspense fallback={<p className='h-screen bg-red-200'>Loading...</p>}>
+        <Suspense fallback={<Loading />}>
         <PokemonInfo params={params}/>
         </Suspense>
         </>

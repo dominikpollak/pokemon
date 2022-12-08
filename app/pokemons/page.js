@@ -12,23 +12,7 @@ const pokePromise = fetchPokemons()
 export default function PokemonsPage() {
 
     const [query, setQuery] = useState('')
-    // const [pokesWithId, setPokesWithId] = useState([])
-
-    // useEffect(() => {
-    //     async function getPokemons() {
-    //         try {
-    //             setPokesWithId(await fetchPokemons())
-    //         }
-    //         catch (err) {
-    //             <p>{err.message}</p>
-    //         }
-    //     }
-    //     getPokemons()
-
-    //     console.log('rerender')
-
-    // }, [JSON.stringify(pokesWithId)])
-
+    
     const pokesWithId = use(pokePromise)
 
     return (
@@ -47,7 +31,7 @@ export default function PokemonsPage() {
             <header className="absolute lg:top-6 lg:right-14 top-2 right-4">
                 <Link className="underline hover:font-semibold" href='/'>back</Link>
             </header>
-            
+
                 <PokemonList pokesWithId={pokesWithId} query={query} />
         </main>
     )
