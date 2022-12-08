@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react';
 import { useState, use } from 'react';
 import Link from "next/link"
 import { Suspense } from "react";
@@ -48,7 +47,7 @@ export default function PokemonsPage() {
             <header className="absolute lg:top-6 lg:right-14 top-2 right-4">
                 <Link className="underline hover:font-semibold" href='/'>back</Link>
             </header>
-
+            
                 <PokemonList pokesWithId={pokesWithId} query={query} />
         </main>
     )

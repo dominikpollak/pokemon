@@ -4,7 +4,15 @@ import Link from 'next/link'
 import Stardustncandy from './stardustncandy';
 
 
-export default function PokemonInfo({pokemon}) {
+export default async function PokemonInfo({params}) {
+
+    async function getPokemon() {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`)
+        return res.json()
+    }
+
+    const pokemon = await getPokemon()
+
 
     return (
         <div className='h-screen flex flex-col pt-[2em]' key={pokemon.name}>

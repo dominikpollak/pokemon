@@ -15,7 +15,7 @@ export default function PokemonList({ pokesWithId, query}) {
           }
         }).map(pokemon => (
           //pokemon link card with name and image
-          <AnimatePresence exitBeforeEnter={true} onExitComplete={() => null}>
+          <AnimatePresence mode='wait' onExitComplete={() => null}>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
               <Link className="flex flex-col items-center justify-center p-1 border-2 rounded-md border-slate-600
       cursor-pointer capitalize text-md text-center text-[0.8em] lg:text-[1.2em] shadow-md m-1 duration-200
