@@ -26,13 +26,13 @@ export default async function PokemonPage({ params }) {
             <div className='h-screen flex flex-col pt-[2em]' key={pokemon.name}>
 
                 <Image
-                    className='relative mx-auto max-h-[220px] hover:scale-105 duration-300'
+                    className='relative mx-auto max-h-[190px] lg:max-h-[220px] hover:scale-105 duration-300'
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
                     width={250}
                     height={250}
                     alt={pokemon.name} />
 
-                <main className="mt-[-4.5em] w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-white shadow-md">
+                <main className="mt-[-4.5em] w-[21em] lg:w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-white shadow-md">
                     <article className='px-10 py-6 pt-28'>
                         {/* <h1 className='text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-rose-800 text-3xl tracking-[5px] font-light capitalize text-center pb-6' */}
                         <h1 className='text-cyan-900 text-4xl tracking-[5px] font-light capitalize text-center pb-7'
@@ -61,9 +61,9 @@ export default async function PokemonPage({ params }) {
                             </div>
 
                             <div className='py-2 '>
-                                <div className='inline-block'>
-                                    {pokemon.types && <span className='capitalize font-medium text-lg'>{pokemon.types[0].type.name} </span>}
-                                    {pokemon.types && pokemon.types.length > 1 && <span className='capitalize font-medium text-lg'>/ {pokemon.types[1].type.name}</span>}
+                                <div className={pokemon.types.length > 1 ? 'inline-block text-[1.1em]' : 'inline-block text-lg' }>
+                                    {pokemon.types && <span className='capitalize font-medium'>{pokemon.types[0].type.name} </span>}
+                                    {pokemon.types && pokemon.types.length > 1 && <span className='capitalize font-medium'>/ {pokemon.types[1].type.name}</span>}
                                 </div>
                                 <p className='text-center text-sm text-cyan-800'>Type</p>
                             </div>

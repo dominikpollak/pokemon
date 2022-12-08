@@ -45,9 +45,7 @@ export default function PokemonsPage() {
                 <Link className="underline hover:font-semibold" href='/'>back</Link>
             </header>
 
-            <Suspense fallback={<Spinner />}>
                 <PokemonList pokesWithId={pokesWithId} query={query} />
-            </Suspense>
         </main>
     )
 }
