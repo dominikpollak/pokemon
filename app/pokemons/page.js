@@ -1,32 +1,36 @@
 'use client'
 
 import { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, use } from 'react';
 import Link from "next/link"
 import { Suspense } from "react";
 import Spinner from '../(components)/spinner';
 import PokemonList from '../(components)/pokemonList'
 import fetchPokemons from '../(components)/fetchPokemons';
 
+const pokePromise = fetchPokemons()
+
 export default function PokemonsPage() {
 
     const [query, setQuery] = useState('')
-    const [pokesWithId, setPokesWithId] = useState([])
+    // const [pokesWithId, setPokesWithId] = useState([])
 
-    useEffect(() => {
-        async function getPokemons() {
-            try {
-                setPokesWithId(await fetchPokemons())
-            }
-            catch (err) {
-                <p>{err.message}</p>
-            }
-        }
-        getPokemons()
+    // useEffect(() => {
+    //     async function getPokemons() {
+    //         try {
+    //             setPokesWithId(await fetchPokemons())
+    //         }
+    //         catch (err) {
+    //             <p>{err.message}</p>
+    //         }
+    //     }
+    //     getPokemons()
 
-        console.log('rerender')
+    //     console.log('rerender')
 
-    }, [JSON.stringify(pokesWithId)])
+    // }, [JSON.stringify(pokesWithId)])
+
+    const pokesWithId = use(pokePromise)
 
     return (
 
