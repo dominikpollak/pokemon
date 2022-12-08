@@ -1,6 +1,6 @@
 import PokemonInfo from './pokemonInfo';
 import { Suspense } from 'react';
-import Loading from './loading';
+import Loading from '../../(components)/loading';
 
 // SSG render
 export async function generateStaticParams() {

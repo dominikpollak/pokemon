@@ -42,18 +42,18 @@ export default async function PokemonInfo({params}) {
 
                     <div className="flex justify-around border-y-[1px] my-2 py-4" >
 
-                        <div className='border-r-[1px] pr-7 py-2'>
-                            <p className='font-medium text-lg '>{pokemon.weight}kg</p>
+                        <div className='border-r-[1px] pr-7 py-2 text-[0.9em] lg:text-lg'>
+                            <p className='font-medium'>{pokemon.weight}kg</p>
                             <div className='text-sm text-cyan-800 text-center'>Weight</div>
                         </div>
 
-                        <div className={pokemon.types.length > 1 ? 'border-r-[1px] pr-4 py-2' : 'border-r-[1px] pr-7 py-2'}>
-                            <p className='font-medium text-lg text-center'>{pokemon.height}m</p>
+                        <div className={pokemon.types.length > 1 ? 'border-r-[1px] pr-4 pl-2 py-2 text-[0.9em] lg:text-lg' : 'border-r-[1px] pr-7 py-2'}>
+                            <p className='font-medium text-center'>{pokemon.height}m</p>
                             <div className='text-sm text-cyan-800 text-center'>Height</div>
                         </div>
 
                         <div className='py-2 pl-1 '>
-                            <div className={pokemon.types.length > 1 ? 'inline-block text-[1.1em]' : 'inline-block text-lg'}>
+                            <div className={pokemon.types.length > 1 ? 'inline-block text-[0.9em] lg:text-[1.1em]' : 'inline-block text-[0.9em] lg:text-lg'}>
                                 {pokemon.types && <span className='capitalize font-medium'>{pokemon.types[0].type.name} </span>}
                                 {pokemon.types && pokemon.types.length > 1 && <span className='capitalize font-medium'>/ {pokemon.types[1].type.name}</span>}
                             </div>
