@@ -64,7 +64,7 @@ export default async function PokemonInfo({params}) {
                 </article>
             </main>
             <footer className='text-center pb-8'>
-                <Link className='underline hover:font-semibold text-lg' href='/pokemons'>back</Link>
+                <Link className='underline hover:font-semibold text-lg' href='/'>back</Link>
             </footer>
         </div>
     )

@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Suspense } from 'react'
 
 export default function PokemonList({ pokesWithId, query}) {
 
@@ -15,14 +16,14 @@ export default function PokemonList({ pokesWithId, query}) {
           }
         }).map(pokemon => (
           //pokemon link card with name and image
+          <Suspense fallback={<div>Loading...</div>}>
           <AnimatePresence mode='wait' onExitComplete={() => null}>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.95 }}>
               <Link className="flex flex-col items-center justify-center p-1 border-2 rounded-md border-slate-600
       cursor-pointer capitalize text-md text-center text-[0.85em] sm:text-[0.9em] lg:text-[1.2em] shadow-md m-1 duration-200
       hover:text-slate-500 hover:font-semibold hover:bg-slate-200/[0.4]"
                 key={pokemon.name}
-                href={`/pokemons/${pokemon.name}`}>
-
+                href={`/${pokemon.name}`}>
                 <Image
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
                   width={120}
@@ -33,7 +34,8 @@ export default function PokemonList({ pokesWithId, query}) {
                 </div>
               </Link>
             </motion.div>
-          </AnimatePresence>))}
+          </AnimatePresence>
+          </Suspense>))}
       </div>
   )
 }
