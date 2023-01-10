@@ -7,3 +7,5 @@ Server rendering is able due to NextJS (version 13).
 I was also experimenting with some of the Next's features like data streaming.
 
 When building this website I learned how to handle rendering of bigger amount of data and when to use different types of renderings.
+
+Site is fully responsive.
