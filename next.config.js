@@ -4,13 +4,13 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: "raw.githubusercontent.com",
-        port : '',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
         pathname: '/PokeAPI/sprites/master/sprites/**/*',
       },
     ],
   },
-  experimental:{appDir: true},
+  experimental: { appDir: true },
   reactStrictMode: true,
   concurrentFeatures: true,
-}
+};
