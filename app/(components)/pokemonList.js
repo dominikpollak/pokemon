@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { useContext } from 'react';
-import { darkModeContext } from '../layout';
+import { DarkModeContext } from '../(context)/darkModeContext';
 
 export default function PokemonList({ pokesWithId, query }) {
-  const darkmode = useContext(darkModeContext);
+  const darkmode = useContext(DarkModeContext);
 
   return (
     <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-8 lg:px-[8em] pb-24 pt-12">

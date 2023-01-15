@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
-import { darkModeContext } from '../layout';
+import { DarkModeContext } from '../(context)/darkModeContext';
 import Stardustncandy from '../[id]/stardustncandy';
 
 export default function PokemonCard({ pokemon }) {
-  const darkmode = useContext(darkModeContext);
+  const darkmode = useContext(DarkModeContext);
 
   return (
     <div

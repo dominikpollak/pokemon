@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import DarkModeIcon from '../imgs/dark_mode.svg';
 import LightModeIcon from '../imgs/light_mode.svg';
 import '../styles/globals.css';
+import { DarkModeContext } from './(context)/darkModeContext';
 
-export const darkModeContext = createContext();
+// export const darkModeContext = createContext();
 
 export default function RootLayout({ children }) {
   const [darkmode, setDarkmode] = useState(false);
@@ -36,9 +37,9 @@ export default function RootLayout({ children }) {
           )}
         </button>
 
-        <darkModeContext.Provider value={darkmode}>
+        <DarkModeContext.Provider value={darkmode}>
           {children}
-        </darkModeContext.Provider>
+        </DarkModeContext.Provider>
       </body>
     </html>
   );
