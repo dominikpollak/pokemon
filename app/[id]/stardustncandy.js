@@ -16,15 +16,15 @@ export default function Stardustncandy({ pokemon, darkmode }) {
 
   return (
     <div>
-      <div className="flex justify-evenly mt-16 translate-y-[-35%]">
+      <div className="mt-16 flex translate-y-[-35%] justify-evenly">
         <div
           className={
             darkmode
-              ? 'border-[1.5px] border-cyan-100 rounded-xl py-2 px-4 lg:px-7 lg:py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'
-              : 'border-[1px] border-slate-800 rounded-xl py-2 px-4 lg:px-7 lg:py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'
+              ? 'rounded-xl border-[1.5px] border-cyan-100 bg-gradient-to-r from-cyan-300 to-cyan-600 py-2 px-4 shadow-sm lg:px-7 lg:py-3'
+              : 'rounded-xl border-[1px] border-slate-800 bg-gradient-to-r from-cyan-300 to-cyan-600 py-2 px-4 shadow-sm lg:px-7 lg:py-3'
           }
         >
-          <p className="font-semibold text-lg text-center text-black">
+          <p className="text-center text-lg font-semibold text-black">
             {stardust}
           </p>
           <div className="text-sm text-white">Stardust</div>
@@ -32,11 +32,11 @@ export default function Stardustncandy({ pokemon, darkmode }) {
         <div
           className={
             darkmode
-              ? 'border-[1.5px] border-cyan-100 rounded-xl py-2 px-6 lg:px-9 lg:py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'
-              : 'border-[1px] border-slate-800 rounded-xl py-2 px-6 lg:px-9 lg:py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm'
+              ? 'rounded-xl border-[1.5px] border-cyan-100 bg-gradient-to-r from-cyan-300 to-cyan-600 py-2 px-6 shadow-sm lg:px-9 lg:py-3'
+              : 'rounded-xl border-[1px] border-slate-800 bg-gradient-to-r from-cyan-300 to-cyan-600 py-2 px-6 shadow-sm lg:px-9 lg:py-3'
           }
         >
-          <p className="font-semibold text-lg text-center text-black">
+          <p className="text-center text-lg font-semibold text-black">
             {candy}
           </p>
           <div className="text-sm text-white">Candy</div>

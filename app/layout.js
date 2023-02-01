@@ -6,7 +6,6 @@ import DarkModeIcon from '../imgs/dark_mode.svg';
 import LightModeIcon from '../imgs/light_mode.svg';
 import '../styles/globals.css';
 import { DarkModeContext } from './(context)/darkModeContext';
-
 // export const darkModeContext = createContext();
 
 export default function RootLayout({ children }) {

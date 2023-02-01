@@ -10,12 +10,12 @@ export default function Loading() {
     // </div>
     //     </div>
     <>
-      <div className="h-screen flex flex-col pt-[2em]">
-        <div className="flex justify-center items-center">
+      <div className="flex h-screen flex-col pt-[2em]">
+        <div className="flex items-center justify-center">
           <div role="status">
             <svg
               aria-hidden="true"
-              class="mr-2 w-[220px] max-h-[220px] text-gray-200 animate-spin dark:text-gray-600 fill-black"
+              class="mr-2 max-h-[220px] w-[220px] animate-spin fill-black text-gray-200 dark:text-gray-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -32,40 +32,40 @@ export default function Loading() {
             <span class="sr-only">Loading...</span>
           </div>
         </div>
-        <main className="mt-[-4.5em] w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-white shadow-md">
+        <main className="mx-auto mt-[-4.5em] mb-5 max-h-[36em] w-[25em] rounded-xl border-0 border-slate-600 bg-white shadow-md">
           <article className="px-10 py-6 pt-28">
-            <h1 className="text-cyan-900 text-4xl tracking-[5px] font-light capitalize text-center pb-7"></h1>
-            <div className="h-[0.9em] w-[13em] mx-auto bg-gradient-to-r from-cyan-500 to-cyan-700 rounded-l-full rounded-r-full mb-8"></div>
+            <h1 className="pb-7 text-center text-4xl font-light capitalize tracking-[5px] text-cyan-900"></h1>
+            <div className="mx-auto mb-8 h-[0.9em] w-[13em] rounded-l-full rounded-r-full bg-gradient-to-r from-cyan-500 to-cyan-700"></div>
             <div className="flex justify-center pb-8">
-              <p className="text-center border-r-[1px] pr-6">HP</p>
-              <p className="text-center pl-8">XP</p>
+              <p className="border-r-[1px] pr-6 text-center">HP</p>
+              <p className="pl-8 text-center">XP</p>
             </div>
 
-            <div className="flex justify-around border-y-[1px] my-2 py-4">
-              <div className="border-r-[1px] pr-7 py-2">
-                <p className="font-medium text-lg ">kg</p>
+            <div className="my-2 flex justify-around border-y-[1px] py-4">
+              <div className="border-r-[1px] py-2 pr-7">
+                <p className="text-lg font-medium ">kg</p>
                 <div className="text-sm text-cyan-800">Weight</div>
               </div>
 
-              <div className="border-r-[1px] pr-7 py-2">
-                <p className="font-medium text-lg text-center">m</p>
+              <div className="border-r-[1px] py-2 pr-7">
+                <p className="text-center text-lg font-medium">m</p>
                 <div className="text-sm text-cyan-800">Height</div>
               </div>
 
               <div className="py-2 ">
                 <div className="inline-block">
-                  <span className="capitalize font-medium text-lg"></span>
+                  <span className="text-lg font-medium capitalize"></span>
                 </div>
                 <p className="text-center text-sm text-cyan-800">Type</p>
               </div>
             </div>
-            <div className="flex justify-evenly mt-16 translate-y-[-35%]">
-              <div className="border-[1px] border-slate-800 rounded-xl px-7 py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm">
-                <p className="font-semibold text-lg text-center">?</p>
+            <div className="mt-16 flex translate-y-[-35%] justify-evenly">
+              <div className="rounded-xl border-[1px] border-slate-800 bg-gradient-to-r from-cyan-300 to-cyan-600 px-7 py-3 shadow-sm">
+                <p className="text-center text-lg font-semibold">?</p>
                 <div className="text-sm text-white">Stardust</div>
               </div>
-              <div className="border-[1px] border-slate-800 rounded-xl px-9 py-3 bg-gradient-to-r from-cyan-300 to-cyan-600 shadow-sm">
-                <p className="font-semibold text-lg text-center">?</p>
+              <div className="rounded-xl border-[1px] border-slate-800 bg-gradient-to-r from-cyan-300 to-cyan-600 px-9 py-3 shadow-sm">
+                <p className="text-center text-lg font-semibold">?</p>
                 <div className="text-sm text-white">Candy</div>
               </div>
             </div>

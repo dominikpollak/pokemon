@@ -11,11 +11,11 @@ export default function PokemonCard({ pokemon }) {
 
   return (
     <div
-      className="h-screen flex flex-col pt-[2em] overflow-hidden"
+      className="flex h-screen flex-col overflow-hidden pt-[2em]"
       key={pokemon.name}
     >
       <Image
-        className="relative mx-auto max-h-[190px] lg:max-h-[220px] hover:scale-105 duration-300"
+        className="relative mx-auto max-h-[190px] duration-300 hover:scale-105 lg:max-h-[220px]"
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
         width={250}
         height={250}
@@ -25,8 +25,8 @@ export default function PokemonCard({ pokemon }) {
       <main
         className={
           darkmode
-            ? 'mt-[-4.5em] w-[21em] lg:w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-slate-900 shadow-sm shadow-cyan-900 text-white'
-            : 'mt-[-4.5em] w-[21em] lg:w-[25em] max-h-[36em] mx-auto mb-5 border-0 rounded-xl border-slate-600 bg-white shadow-md'
+            ? 'mx-auto mt-[-4.5em] mb-5 max-h-[36em] w-[21em] rounded-xl border-0 border-slate-600 bg-slate-900 text-white shadow-sm shadow-cyan-900 lg:w-[25em]'
+            : 'mx-auto mt-[-4.5em] mb-5 max-h-[36em] w-[21em] rounded-xl border-0 border-slate-600 bg-white shadow-md lg:w-[25em]'
         }
       >
         <article className="px-10 py-6 pt-28">
@@ -34,33 +34,33 @@ export default function PokemonCard({ pokemon }) {
           <h1
             className={
               darkmode
-                ? 'text-cyan-500 text-4xl tracking-[5px] font-light capitalize text-center pb-7'
-                : 'text-cyan-900 text-4xl tracking-[5px] font-light capitalize text-center pb-7'
+                ? 'pb-7 text-center text-4xl font-light capitalize tracking-[5px] text-cyan-500'
+                : 'pb-7 text-center text-4xl font-light capitalize tracking-[5px] text-cyan-900'
             }
           >
             {pokemon.name}
           </h1>
 
-          <div className="h-[0.9em] w-[13em] mx-auto bg-gradient-to-r from-cyan-500 to-cyan-700 rounded-l-full rounded-r-full mb-8"></div>
+          <div className="mx-auto mb-8 h-[0.9em] w-[13em] rounded-l-full rounded-r-full bg-gradient-to-r from-cyan-500 to-cyan-700"></div>
 
           <div className="flex justify-center pb-8 text-[1.1em]">
             {pokemon.stats && (
-              <p className="text-center border-r-[1px] pr-6">
+              <p className="border-r-[1px] pr-6 text-center">
                 HP {Math.floor(Math.random() * pokemon.stats[0].base_stat)}/
                 {pokemon.stats[0].base_stat}
               </p>
             )}
-            <p className="text-center pl-8">XP {pokemon.base_experience}</p>
+            <p className="pl-8 text-center">XP {pokemon.base_experience}</p>
           </div>
 
-          <div className="flex justify-around border-y-[1px] my-2 py-4">
-            <div className="border-r-[1px] pr-7 py-2 text-[0.9em] lg:text-[1.1em] flex flex-col justify-around">
+          <div className="my-2 flex justify-around border-y-[1px] py-4">
+            <div className="flex flex-col justify-around border-r-[1px] py-2 pr-7 text-[0.9em] lg:text-[1.1em]">
               <p className="font-medium">{pokemon.weight}kg</p>
               <div
                 className={
                   darkmode
-                    ? 'text-sm text-cyan-400 text-center'
-                    : 'text-sm text-cyan-800 text-center'
+                    ? 'text-center text-sm text-cyan-400'
+                    : 'text-center text-sm text-cyan-800'
                 }
               >
                 Weight
@@ -70,16 +70,16 @@ export default function PokemonCard({ pokemon }) {
             <div
               className={
                 pokemon.types.length > 1
-                  ? 'border-r-[1px] pr-5 pl-2 py-2 text-[0.9em] lg:text-[1.1em] flex flex-col justify-around'
-                  : 'border-r-[1px] pr-7 py-2 text-[0.9em] lg:text-[1.1em] flex flex-col justify-around'
+                  ? 'flex flex-col justify-around border-r-[1px] py-2 pr-5 pl-2 text-[0.9em] lg:text-[1.1em]'
+                  : 'flex flex-col justify-around border-r-[1px] py-2 pr-7 text-[0.9em] lg:text-[1.1em]'
               }
             >
-              <p className="font-medium text-center">{pokemon.height}m</p>
+              <p className="text-center font-medium">{pokemon.height}m</p>
               <div
                 className={
                   darkmode
-                    ? 'text-sm text-cyan-400 text-center'
-                    : 'text-sm text-cyan-800 text-center'
+                    ? 'text-center text-sm text-cyan-400'
+                    : 'text-center text-sm text-cyan-800'
                 }
               >
                 Height
@@ -91,16 +91,16 @@ export default function PokemonCard({ pokemon }) {
                 className={
                   pokemon.types.length > 1
                     ? 'text-[0.9em] lg:text-[1.1em]'
-                    : 'text-[0.9em] lg:text-[1.1em] flex flex-col justify-around'
+                    : 'flex flex-col justify-around text-[0.9em] lg:text-[1.1em]'
                 }
               >
                 {pokemon.types && (
-                  <span className="capitalize font-medium">
+                  <span className="font-medium capitalize">
                     {pokemon.types[0].type.name}{' '}
                   </span>
                 )}
                 {pokemon.types && pokemon.types.length > 1 && (
-                  <span className="capitalize font-medium">
+                  <span className="font-medium capitalize">
                     / {pokemon.types[1].type.name}
                   </span>
                 )}
@@ -108,8 +108,8 @@ export default function PokemonCard({ pokemon }) {
               <div
                 className={
                   darkmode
-                    ? 'text-sm text-cyan-400 text-center'
-                    : 'text-sm text-cyan-800 text-center'
+                    ? 'text-center text-sm text-cyan-400'
+                    : 'text-center text-sm text-cyan-800'
                 }
               >
                 Type
@@ -119,12 +119,12 @@ export default function PokemonCard({ pokemon }) {
           <Stardustncandy pokemon={pokemon} darkmode={darkmode} />
         </article>
       </main>
-      <footer className="text-center pb-8">
+      <footer className="pb-8 text-center">
         <Link
           className={
             darkmode
-              ? 'hover:font-semibold text-lg text-white'
-              : 'hover:font-semibold text-lg'
+              ? 'text-lg text-white hover:font-semibold'
+              : 'text-lg hover:font-semibold'
           }
           href="/"
         >

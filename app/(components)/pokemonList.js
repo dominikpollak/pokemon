@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { DarkModeContext } from '../(context)/darkModeContext';
 
 export default function PokemonList({ pokesWithId, query }) {
+
   const darkmode = useContext(DarkModeContext);
 
   return (
@@ -17,7 +18,7 @@ export default function PokemonList({ pokesWithId, query }) {
           .filter((poke) => {
             if (query == '') return poke;
             else {
-              {
+              
                 /*conditional filtering based on searchbar value */
               }
               return poke.name.toLowerCase().includes(query);

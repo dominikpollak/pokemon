@@ -15,15 +15,15 @@ export default function PokemonsPage() {
 
   return (
     <main className="relative">
-      <div className="flex w-full justify-center mt-4">
+      <div className="mt-4 flex w-full justify-center">
         <div className="flex items-center">
-          <Image src={Pokeball} height={40} width={40} alt='pokeball'/>
+          <Image src={Pokeball} height={40} width={40} alt="pokeball" />
         </div>
 
-        <div className="flex justify-center items-center px-4">
+        <div className="flex items-center justify-center px-4">
           <input
             type="text"
-            className="px-6 py-2 shadow-md border-[1.5px] border-black rounded-xl text-center text-white font-bold bg-blue-400"
+            className="rounded-xl border-[1.5px] border-black bg-blue-400 px-6 py-2 text-center font-bold text-white shadow-md"
             placeholder="Search pokemon..."
             autoFocus
             onChange={(e) => {
@@ -33,7 +33,7 @@ export default function PokemonsPage() {
         </div>
 
         <div className="flex items-center">
-          <Image src={Pokeball} height={40} width={40} alt='pokeball' />
+          <Image src={Pokeball} height={40} width={40} alt="pokeball" />
         </div>
       </div>
 
